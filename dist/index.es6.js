@@ -1374,6 +1374,16 @@ var ObjectionAdapter = function (_DefaultAdapter) {
     value: function destroy(model, Model) {
       return Model.query().deleteById(model.id);
     }
+  }, {
+    key: 'get',
+    value: function get(model, attr, Model) {
+      return model[attr];
+    }
+  }, {
+    key: 'set',
+    value: function set(props, model, Model) {
+      return model.$set(props);
+    }
   }]);
 
   return ObjectionAdapter;
